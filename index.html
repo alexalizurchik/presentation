@@ -1,0 +1,286 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Presentation</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+						<h1>Canvas</h1>
+						<aside class="notes">
+							There were poor opportunities to create graphics before canvas. Developers had to use DOM elements 
+							but manipulating of DOM elements is time-consuming and resource-intensive task for browsers, 
+							because of it requires a lot of recalculations of DOM-nodes properties, so it did not allow to create 
+							more complex graphics applications and animations. Another alternative was Adobe Flash, but it is an 
+							embedded external file and cannot interact directly with the other HTML elements. So canvas came to the 
+							aid of this problem. And nowadays this technology is expanding its opportunities up to creating games.
+						</aside>
+				</section>
+				<section data-markdown="slides/1.md"
+             data-separator="^\n\n\n"
+             data-separator-notes="^Note:"
+             data-charset="iso-8859-15">
+				</section>
+				<section>
+					<section>
+						<h2>Games created using canvas</h2>
+            <img data-src="img/games_example.png">
+            <aside class="notes">
+              There are examples of games which were created using canvas
+						</aside>
+					</section>
+					<section>
+						<h2>Games created using canvas</h2>
+            <img data-src="img/agario.jpg">
+            <aside class="notes">
+              Such popular game as agario was created using canvas too.
+						</aside>
+					</section>
+				</section>
+				<section data-markdown="slides/3.md"
+						data-separator="^\n\n\n"
+            data-charset="iso-8859-15">
+				</section>
+				<section>
+					<h2>browsers support</h2>
+          <img data-src="img/canvas_support.png">
+          <aside class="notes">
+            This image demonsrates this.
+          </aside>
+				</section>
+				<section data-markdown="slides/5.md"
+						data-separator="^\n\n\n"
+            data-charset="iso-8859-15">
+				</section>
+				<section data-markdown="slides/6.md"
+						data-separator="^\n\n\n"
+            data-charset="iso-8859-15">
+				</section>
+				<section data-markdown="slides/7.md"
+						data-separator="^\n\n\n"
+            data-charset="iso-8859-15">
+				</section>
+				<section>
+          <h2>browsers support</h2>
+          <img data-src="img/offscreencanvas_support.png">
+          <aside class="notes">
+            But the technology is on the early stage of the developing, so only Chrome supports it.
+          </aside>
+				</section>
+				<section>
+            <h2>Let's try to create a simple breakout game using canvas</h2>
+            <img data-src="img/game.png">
+            <aside class="notes">
+              Now I will show creating of a simple version of arcanoid game with canvas.
+            </aside>
+				</section>
+				<section>
+					<h2>Step 1:</h2>
+					<p>a playing field and moving ball creating </p>
+				</section>
+				<section data-markdown="slides/10.md"
+						data-separator="^\n\n\n"
+						data-separator-vertical="^\r\n"
+						data-charset="iso-8859-15">
+				</section>
+				<section>
+          <video data-autoplay src="game_steps/step1.webm"></video>
+          <aside class="notes">
+            So we created the ball which is moving, but it keeps disappearing off the edge of the canvas.
+          </aside> 
+				</section>
+				<section>
+					<h2>Step 2:</h2>
+          <p>the ball bouncing off the walls</p>		
+          <aside class="notes">
+            For creating the ball bouncing off the walls we need to determine the ball radius
+          </aside> 
+				</section>
+				<section data-markdown="slides/12.md"
+								data-separator="^\n\n\n"
+								data-separator-vertical="^\r\n"
+								data-charset="iso-8859-15">
+					<section>
+					</section>
+				</section>
+				<section>
+					<video data-autoplay src="game_steps/step2.webm"></video>
+				</section>
+				<section>
+					<h2>Step 3:</h2>
+          <p>the interactive paddle</p>	
+          <aside class="notes">
+            We need a paddle to hit the bal
+          </aside> 
+				</section>
+				<section data-markdown="slides/14.md"
+								data-separator="^\n\n\n"
+								data-separator-vertical="^\r\n"
+								data-charset="iso-8859-15">
+					<section>
+					</section>
+				</section>
+				<section>
+					<video data-autoplay src="game_steps/step3.webm"></video>
+				</section>
+				<section>
+					<h2>Step 4:</h2>
+          <p>"game over"</p>
+          <aside class="notes">
+            Instead of allowing the ball to bounce off all walls, let's only allow three — left, top and right.
+            Hitting the bottom wall will end the game
+          </aside>					
+				</section>
+				<section data-markdown="slides/17.md"
+								data-separator="^\n\n\n"
+								data-separator-vertical="^\r\n"
+								data-charset="iso-8859-15">
+					<section>
+					</section>
+				</section>
+				<section>
+          <video data-autoplay src="game_steps/step4.webm"></video>
+          <aside class="notes">
+            the game is finally feeling more like a game
+          </aside>
+				</section>
+				<section>
+					<h2>Step 5:</h2>
+          <p>bricks creating </p>	
+          <aside class="notes">
+            I would like to create some bricks to destroy with the ball.
+          </aside>				
+				</section>
+				<section data-markdown="slides/20.md"
+								data-separator="^\n\n\n"
+								data-separator-vertical="^\r\n"
+								data-charset="iso-8859-15">
+					<section>
+					</section>
+				</section>
+				<section>
+          <video data-autoplay src="game_steps/step5.webm"></video>
+          <aside class="notes">
+            We created bricks! But the ball isn't interacting with them at all.
+          </aside>	
+				</section>
+				<section>
+						<h2>Step 6:</h2>
+            <p>bricks destruction</p>	
+            <aside class="notes">
+              We need to think about adding collision detection
+            </aside>				
+				</section>
+				<section data-markdown="slides/23.md"
+								data-separator="^\n\n\n"
+								data-separator-vertical="^\r\n"
+								data-charset="iso-8859-15">
+					<section>
+					</section>
+				</section>
+				<section>
+					<video data-autoplay src="game_steps/step6.webm"></video>
+				</section>
+				<section>
+					<h2>Step 7:</h2>
+          <p>counting the score</p>	
+          <aside class="notes">
+            I would like the game could award points for every brick a user hits, and keep count of the total score.
+          </aside>	
+				</section>
+				<section data-markdown="slides/25.md"
+								data-separator="^\n\n\n"
+								data-separator-vertical="^\r\n"
+								data-charset="iso-8859-15">
+					<section>
+					</section>
+				</section>
+				<section>
+					<video data-autoplay src="game_steps/step7.webm"></video>
+				</section>
+				<section>
+						<h2>Step 8:</h2>
+            <p>listening for mouse movement</p>		
+            <aside class="notes">
+              I have already added keyboard controls, but I would like to add mouse controls too
+            </aside>
+					</section>
+					<section data-markdown="slides/27.md"
+									data-separator="^\n\n\n"
+									data-separator-vertical="^\r\n"
+									data-charset="iso-8859-15">
+						<section>
+						</section>
+					</section>
+					<section>
+						<video data-autoplay src="game_steps/step8.webm"></video>
+					</section>
+					<section>
+						<h2>Step 9:</h2>
+            <p>giving the player some lives</p>		
+            <aside class="notes">
+              Also I would like to offer more than one life to the player. 
+              They could make a mistake or two and still be able to finish the game.
+            </aside>			
+					</section>
+					<section data-markdown="slides/30.md"
+									data-separator="^\n\n\n"
+									data-separator-vertical="^\r\n"
+									data-charset="iso-8859-15">
+						<section>
+						</section>
+					</section>
+					<section>
+            <video data-autoplay src="game_steps/win.webm"></video>
+            <aside class="notes">
+              It's a final version of the game. If you lose, you can play again.
+              </aside>	
+					</section>
+				<section>
+					<p>Prepared by <a href="https://github.com/alexalizurchik">Alexandrina Lizurchik</a></p>
+					<span>Full <a href="https://gist.github.com/alexalizurchik/b5f18a6f91f246644cc9a831e078f6ab">code</a> of the game</span>
+          <aside class="notes">
+            So as we can see the canvas is a powerful technology for working with graphics in a browser, 
+            at the same time all specifics must be taken into account.
+          </aside>	
+        </section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
